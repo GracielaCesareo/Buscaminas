@@ -1,27 +1,32 @@
-
-//var casilla = document.getElementById('numero');
 var casilla = document.getElementsByClassName('numero');
-casilla[0].addEventListener("click",mostrarNumero);
+
+for (var i = 0; i < casilla.length; i++) {
+  casilla[i].addEventListener("click",mostrarNumero);
+}
 
 function mostrarNumero() {
-  var casillaNumero = document.getElementsByClassName('numero')
-  casillaNumero[0].innerHTML = 1;
+    this.innerHTML = 1;
 }
 
-var mina = document.getElementById('mina');
-mina.addEventListener("click",mostrarMina);
+var mina = document.getElementsByClassName('mina');
+
+for (i = 0; i < mina.length; i++) {
+  mina[i].addEventListener("click",mostrarMina);
+}
 
 function mostrarMina() {
-  var casillaMina = document.getElementById('mina');
+  this.innerHTML = "X";
+
   var mensaje = document.getElementById('termina');
   mensaje.innerHTML = "Game Over!"
-  casillaMina.innerHTML = "X";
 }
 
-var vacia = document.getElementById('color');
-vacia.addEventListener("click",cambiarColor);
+var vacia = document.getElementsByClassName('vacia');
+
+for (var i = 0; vacia.length; i++) {
+  vacia[i].addEventListener("click",cambiarColor);
+}
 
 function cambiarColor() {
-  var casillaVacia = document.getElementById('color');
-  casillaVacia.style.backgroundColor = "blue";
+    this.style.backgroundColor = "blue";
 }
