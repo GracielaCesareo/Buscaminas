@@ -19,14 +19,23 @@ function mostrarMina() {
 
   var mensaje = document.getElementById('termina');
   mensaje.innerHTML = "Game Over!"
+
+  event.stopPropagation();
 }
 
 var vacia = document.getElementsByClassName('vacia');
 
-for (var i = 0; vacia.length; i++) {
+for (var i = 0; i < vacia.length; i++) {
   vacia[i].addEventListener("click",cambiarColor);
 }
 
 function cambiarColor() {
     this.style.backgroundColor = "blue";
+}
+
+var boton = document.getElementById('boton');
+boton.addEventListener("click",reiniciarJuego);
+
+function reiniciarJuego() {
+    location.reload();
 }
